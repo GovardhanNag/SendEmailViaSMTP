@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SendEmailViaSMTP"
+             x:Class="SendEmailViaSMTP.MainPage">
+    <ContentPage.Content>
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="To"/>
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="entryTo" Placeholder="Recipient address" Keyboard="Email"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Cc"/>
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="entryCc" Placeholder="Cc" Keyboard="Email"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Subject"/>
+                <Entry Grid.Row="2" Grid.Column="1" x:Name="entrySubject" Placeholder="Subject" Keyboard="Default"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Body"/>
+                <Editor Grid.Row="3" Grid.Column="1"  x:Name="entryBody" Placeholder="Body" Keyboard="Default" HeightRequest="150"/>
+                <Button Grid.Row="4" Grid.ColumnSpan="2" x:Name="btnSend" Text="Send" CornerRadius="5" Clicked="BtnSend_Clicked" HorizontalOptions="Center"/>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>
