@@ -1,30 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SendEmailViaSMTP"
              x:Class="SendEmailViaSMTP.MainPage">
     <ContentPage.Content>
-            <Grid Padding="20">
+        <Frame CornerRadius="5" BorderColor="Gray"  VerticalOptions="CenterAndExpand" Padding="10" Margin="10">
+            <StackLayout>
+            <Label Text="Send Mail" FontSize="30" TextDecorations="Underline" FontAttributes="Bold" Margin="0,10,0,10" TextColor="Green" HorizontalOptions="Center"/>
+            <Grid Padding="5" VerticalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="150"/>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="To"/>
-                <Entry Grid.Row="0" Grid.Column="1" x:Name="entryTo" Placeholder="Recipient address" Keyboard="Email"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="Cc"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="To" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="entryTo" Placeholder="To" Keyboard="Email"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Cc" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center"/>
                 <Entry Grid.Row="1" Grid.Column="1" x:Name="entryCc" Placeholder="Cc" Keyboard="Email"/>
-                <Label Grid.Row="2" Grid.Column="0" Text="Subject"/>
+                <Label Grid.Row="2" Grid.Column="0" Text="Subject" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center"/>
                 <Entry Grid.Row="2" Grid.Column="1" x:Name="entrySubject" Placeholder="Subject" Keyboard="Default"/>
-                <Label Grid.Row="3" Grid.Column="0" Text="Body"/>
-                <Editor Grid.Row="3" Grid.Column="1"  x:Name="entryBody" Placeholder="Body" Keyboard="Default" HeightRequest="150"/>
-                <Button Grid.Row="4" Grid.ColumnSpan="2" x:Name="btnSend" Text="Send" CornerRadius="5" Clicked="BtnSend_Clicked" HorizontalOptions="Center"/>
+                <Label Grid.Row="3" Grid.Column="0" Text="Body" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Start"/>
+                <Editor Grid.Row="3" Grid.Column="1"  x:Name="entryBody" Placeholder="Body" Keyboard="Default" HeightRequest="100"/>
+                <Button Grid.Row="4" Grid.ColumnSpan="2" x:Name="btnSend" FontAttributes="Bold" Text="Send" CornerRadius="5" Clicked="BtnSend_Clicked" HorizontalOptions="Center"/>
             </Grid>
+            </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>
